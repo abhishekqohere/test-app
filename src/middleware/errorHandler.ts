@@ -20,10 +20,22 @@ export const errorHandler = (
     return;
   }
 
+  // if (err instanceof ZodError) {
+  //   const message = err.issues
+  // .map((e) => `${e.path.join(".")}: ${e.message}`)
+  // .join("; ");
+  //   res.status(400).json({ success: false, message, data: null } satisfies ApiResponse);
+  //   return;
+  // }
+
   if (err instanceof ZodError) {
-    const message = err.issues
-  .map((e) => `${e.path.join(".")}: ${e.message}`)
-  .join("; ");
+    const firstIssue = err.issues[0] as unknown as {
+      path: Array<string | number>;
+      message: string;
+    };
+  
+    const message = `${firstIssue.path.join(".")}: ${firstIssue.message}`;
+  
     res.status(400).json({ success: false, message, data: null } satisfies ApiResponse);
     return;
   }
