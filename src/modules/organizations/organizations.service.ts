@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { ACTIVITY_ACTIONS } from '../../config/constants';
-import { NotFoundError, ConflictError, ForbiddenError } from '../../utils/errors';
+import { NotFoundError, ForbiddenError } from '../../utils/errors';
 import { canDeleteOrganization } from '../../utils/permissions';
 import type { Role } from '../../utils/types';
 import { UserRepository } from '../users/users.repository';

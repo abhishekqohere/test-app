@@ -21,7 +21,9 @@ export const errorHandler = (
   }
 
   if (err instanceof ZodError) {
-    const message = err.errors.map((e) => `${e.path.join('.')}: ${e.message}`).join('; ');
+    const message = err.issues
+  .map((e) => `${e.path.join(".")}: ${e.message}`)
+  .join("; ");
     res.status(400).json({ success: false, message, data: null } satisfies ApiResponse);
     return;
   }

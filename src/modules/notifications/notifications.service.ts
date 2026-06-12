@@ -1,4 +1,4 @@
-import { NotFoundError, ForbiddenError } from '../../utils/errors';
+import { NotFoundError } from '../../utils/errors';
 import { NotificationRepository } from './notifications.repository';
 import type { INotification } from './notifications.model';
 import type { NotificationDTO, CreateNotificationInput } from './notifications.types';
