@@ -100,3 +100,6 @@ See `.env.example` for required variables including JWT secrets (min 32 characte
 
 ## Qedix basic test
 This documentation-only PR verifies the Qedix GitHub App, webhook, worker, and dashboard flow.
+
+## Qedix basic test
+This documentation-only PR verifies the Qedix GitHub App, webhook, worker, and dashboard flow.
