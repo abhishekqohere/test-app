@@ -23,7 +23,7 @@ export const authenticate = (req: Request, _res: Response, next: NextFunction): 
 
   const token = header.slice(7);
   try {
-    const decoded = jwt.verify(token, env.JWT_ACCESS_SECRET) as JwtPayload;
+    const decoded = jwt.verify(token, env.JWT_ACCESS_SEC) as JwtPayload;
     if (decoded.type !== 'access') {
       next(new UnauthorizedError('Invalid token type'));
       return;
