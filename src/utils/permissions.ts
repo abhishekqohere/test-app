@@ -12,7 +12,7 @@ export const hasMinimumRole = (userRole: Role, requiredRole: Role): boolean =>
 
 export const canManageMembers = (role: Role): boolean => hasMinimumRole(role, 'Admin');
 
-export const canManageProjects = (role: Role): boolean => hasMinimumRole(role, 'Manager');
+export const canManageProjects = (role: Role): boolean => hasMinimumRole(role, 'Member');
 
 export const canDeleteOrganization = (role: Role): boolean => role === 'Owner';
 
