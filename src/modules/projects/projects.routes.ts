@@ -21,7 +21,7 @@ export const createProjectRoutes = (
   router.get('/:projectId', controller.getById);
   router.patch('/:projectId', requireRole('Manager'), validate(updateProjectSchema), controller.update);
   router.delete('/:projectId', requireRole('Manager'), controller.delete);
-  router.post('/:projectId/archive', requireRole('Manager'), controller.archive);
+  router.post('/:projectId/archive', controller.archive);
   router.post('/:projectId/restore', requireRole('Manager'), controller.restore);
   router.post('/:projectId/members', requireRole('Manager'), validate(assignMembersSchema), controller.assignMembers);
 
