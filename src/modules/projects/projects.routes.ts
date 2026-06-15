@@ -23,7 +23,7 @@ export const createProjectRoutes = (
   router.delete('/:projectId', requireRole('Manager'), controller.delete);
   router.post('/:projectId/archive', requireRole('Manager'), controller.archive);
   router.post('/:projectId/restore', requireRole('Manager'), controller.restore);
-  router.post('/:projectId/members', requireRole('Manager'), validate(assignMembersSchema), controller.assignMembers);
+  router.post('/:projectId/members', requireRole('Manager'), controller.assignMembers);
 
   return router;
 };
